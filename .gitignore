@@ -7,6 +7,12 @@
 export.cfg
 export_credentials.cfg
 
+# Asset import files (automatically generated)
+*.import
+
+# UID files (automatically generated, can be regenerated)
+*.uid
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
@@ -14,3 +20,45 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Editor settings (user-specific)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Build outputs
+dist/
+build/
+export/
+
+# Game specific temporary files
+saves/
+screenshots/
+replays/
+
+# Addons that should be excluded (if not part of project)
+# addons/some_third_party_addon/
+
+# Test outputs
+test_results/
+coverage/
