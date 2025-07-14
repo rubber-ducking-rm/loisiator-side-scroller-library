@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://banqy6dwc5op1"]
 
-[ext_resource type="Script" uid="uid://b0wnu64tl4uls" path="res://scripts/characters/player/basic.gd" id="1_yejvb"]
+[ext_resource type="Script" uid="uid://rc2u63vfqpcn" path="res://scripts/characters/player/basic.gd" id="1_yejvb"]
 [ext_resource type="Texture2D" uid="uid://bw2g4jd7ghiwn" path="res://assets/sprites/characters/kuro/idle/stand2.png" id="3_2bxmg"]
 [ext_resource type="Texture2D" uid="uid://bqkubi1cvqrh3" path="res://assets/sprites/characters/kuro/idle/stand.png" id="4_vo3g0"]
 [ext_resource type="Texture2D" uid="uid://dvd0p1xi7busk" path="res://assets/sprites/characters/kuro/jump/jump2.png" id="5_tx1ml"]
@@ -103,7 +103,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="2DPixelPrototype" type="CharacterBody2D"]
+[node name="2DPixelPrototype" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_yejvb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

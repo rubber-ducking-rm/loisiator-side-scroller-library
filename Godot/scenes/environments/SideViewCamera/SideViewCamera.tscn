@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3gqurnw0jx10"]
+
+[ext_resource type="Script" uid="uid://cwj6sy7s2iw3" path="res://scenes/environments/SideViewCamera/side_view_camera.gd" id="1_p0d34"]
+
+[node name="SideViewCamera" type="Camera2D"]
+script = ExtResource("1_p0d34")
