@@ -56,6 +56,8 @@ func _physics_process(delta: float) -> void:
 		_handle_horizontal_movement()
 	
 	move_and_slide()
+	_handle_pushing() 
+
 	
 	# ここで床判定を更新
 	var just_landed = is_on_floor() and not was_on_floor
@@ -219,3 +221,14 @@ func set_on_ladder(on_ladder: bool, ladder: Ladder):
 	
 	if not on_ladder:
 		ladder_climbing = false
+
+# move_and_slide() の後に追加
+func _handle_pushing():
+	var input_direction = Input.get_axis(INPUT_LEFT, INPUT_RIGHT)
+	
+	if abs(input_direction) > 0.1:
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			if collision.get_collider() is PushableBox:
+				var box = collision.get_collider() as PushableBox
+				box.velocity.x = input_direction * 80.0  # 押す力

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://fejod0350c7l"]
+
+[ext_resource type="Script" uid="uid://dlrkdrxoksato" path="res://scenes/environments/PushableObject/pushable_box.gd" id="1_dk8mc"]
+[ext_resource type="Texture2D" uid="uid://dr4wc0xappvs6" path="res://assets/sprites/environments/2DPixelTilesetPrototype/2 TilePrefabs/s2.png" id="2_arqol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d35a"]
+size = Vector2(62, 62)
+
+[node name="PushableBox" type="CharacterBody2D"]
+script = ExtResource("1_dk8mc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_arqol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7d35a")
