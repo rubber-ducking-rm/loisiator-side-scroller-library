@@ -10,6 +10,9 @@ var player_on_top: bool = false
 var top_detector: Area2D
 
 func _ready():
+	# 床の判定設定を追加
+	floor_max_angle = deg_to_rad(45)  # 床と認識する最大角度
+	floor_snap_length = 10.0          # 床にスナップする距離
 	# 上乗り検知用のArea2Dを自動作成
 	top_detector = Area2D.new()
 	var collision_shape = CollisionShape2D.new()
@@ -42,9 +45,16 @@ func _on_player_exited_top(body):
 func _physics_process(delta):
 	var player_pushing = false
 	
+	# 重力を常に適用（床にいない場合）
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	else:
+		velocity.y = 0  # 床にいる場合はY速度をリセット
+	
 	if player_on_top:
 		velocity.x = 0
 	else:
+		# プレイヤーとの衝突判定とプッシュ処理...
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			if collision.get_collider().name == "Player":
@@ -59,8 +69,5 @@ func _physics_process(delta):
 		
 		if not player_pushing:
 			velocity.x = move_toward(velocity.x, 0, normal_friction * delta)
-	
-	if not is_on_floor():
-		velocity.y += gravity * delta
 	
 	move_and_slide()

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwy5y0odk8wpw"]
+
+[ext_resource type="Script" uid="uid://bh68k03aof64n" path="res://scripts/Cannon.gd" id="1_l1wu8"]
+[ext_resource type="Texture2D" uid="uid://slx126x67eo8" path="res://assets/sprites/environments/2DPixelTilesetPrototype/3 Pipes/Pipe_01.png" id="2_qlmxy"]
+
+[node name="Cannon" type="Node2D"]
+z_index = 5
+script = ExtResource("1_l1wu8")
+
+[node name="CannonBody" type="Sprite2D" parent="."]
+
+[node name="CannonBarrel" type="Sprite2D" parent="CannonBody"]
+
+[node name="FirePoint" type="Marker2D" parent="CannonBody/CannonBarrel"]
+position = Vector2(25, 0)
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_qlmxy")
